@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/Ninja Keep/assets/images/ninja_PNG12.png">
+    <title>
+        <%=title%>
+    </title>
+    <!-- font awesome library -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- css sheet -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<!-- body structure -->
+<body>
+    <!-- header section for header part -->
+    <header>
+        <div class="header">
+            <h1 id="header-title"><i class="fas fa-tasks" style="color: rgb(255, 255, 255);"></i> Ninja Keep</h1>
+        </div>
+    </header>
+    <!-- for creating the task -->
+    <div class="create-and-delete">
+        <!-- this part of the page will contain all the description, category button and date input -->
+        <form action="/create-todo" method="Post">
+            <!-- text area for description -->
+            <div>
+                <textarea name="description" placeholder="Add a Description" cols="50" required></textarea>
+            </div>
+
+            <!-- this is for selecting date -->
+            <div class="select-option">
+                <input type="date" name="duedate" class="design-option-and-date" placeholder="Due Date" required>
+            </div>
+            <!-- this for category -->
+            <div class="select-option ccustom-select">
+                <select name="category" class="design-option-and-date" id="design-option"require>
+                    <option selected disabled hidden>Choose a Category</option>
+                    <option value="Personal"> Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Coding">Coding</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <br>
+            <!-- add task button -->
+            <div class="add-button">
+                <button id="design-button" type="submit"><i class="fas fa-plus"></i> Add Task</button>
+            </div>
+        </form>
+    </div>
+    <!-- this is for showing task which are available in database -->
+    <div>
+        <div class="show-task">
+            <!-- loop to search all the task -->
+        <% for (let i of todotask) { %> 
+                
+            <div id="container">
+                <!-- to print category -->
+                <div id="category">
+                    
+                    <span><%= i.category %></span>
+                </div>
+                <!-- to print description -->
+                <div id="description">
+                    <p><%= i.description %></p>
+                </div>
+                <div id ="date">
+                    <!-- to print date as we neew month so I created a for loop for that -->
+                    <i class="fas fa-calendar-alt" style="color: rgb(255, 255, 255); padding-left: 3px;"></i>
+                    <span><%= i.duedate.slice(8)%></span>
+                    <% let sum = parseInt(i.duedate.slice(5, 7))%>
+                    <% if(sum==1) {%> 
+                        <span>Jan</span>
+                    <%} else if(sum==2){%>
+                        <span>Feb</span>
+                    <%} else if(sum==3){%>
+                        <span>Mar</span>
+                    <%} else if(sum==4){%>
+                        <span>Apr</span>
+                    <%} else if(sum==5){%>
+                        <span>May</span>
+                    <%} else if(sum==6){%>
+                        <span>Jun</span>
+                    <%} else if(sum==7){%>
+                        <span>July</span>
+                    <%} else if(sum==8){%>
+                        <span>Aug</span>
+                    <%} else if(sum==9){%>
+                        <span>Sept</span>
+                    <%} else if(sum==10){%>
+                        <span>Oct</span>
+                    <%} else if(sum==11){%>
+                        <span>Nov</span>
+                    <%} else { %>
+                        <span>Dec</span>
+                    <%}%>
+                    <span><%= i.duedate.slice(0, 4)%></span>
+                    <!-- this is the delete button -->
+                    <div>
+                        <a class="delete-button" href="/delete-task/?id=<%=i._id%>">
+                            <i class="fas fa-trash-alt" style="color: red; font-size: 1.5em; margin-left: 35px;"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- made a div for space -->
+            <div style="width: 20px;">
+            </div>
+            
+        <% } %>
+        </div>
+
+    </div>
+</body>
+</html>

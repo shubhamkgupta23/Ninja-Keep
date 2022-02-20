@@ -1,0 +1,178 @@
+/* removing body margin */
+body{
+    margin: 0%;
+}
+/* this is for header section */
+.header{
+    display: inline-block;
+    margin-top: -20px;
+    color: rgb(255, 255, 255);
+    height: auto;
+    width: 100vw;
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+/* shadow for header tag */
+header{
+    box-shadow:15px 5px 16px 3px rgb(100 34 34);
+}
+/* div for date and category */
+.create-and-delete{
+    margin-top: 2%;
+    text-align: center;
+    border-color: none;
+}
+/* placeholder for descrition */
+::-webkit-input-placeholder {
+    color: grey;
+    text-align: center;
+}
+/* select option */
+.select-option{
+    margin-top: 1%;
+    display: inline-flex;
+    align-items: center;
+    background-color: #c9c9c9;
+    width: 208px;
+    height: 54px;
+    border-radius: 10%;
+    text-align: center;
+    box-shadow: 0px 9px 12px 0px rgb(100 34 34)
+}
+/* this is for option and date */
+.design-option-and-date{
+    width: 100%; 
+    height: 90%; 
+    opacity: 0.8; 
+    border-radius: 10%;
+    border: none;
+    padding: 2px;
+}
+/* add task button design */
+.add-button{
+    display: inline-flex;
+    margin-top:2%;
+    width: 408px;
+    height: 50px;
+    justify-content: center;
+}
+/* designing add task button */
+#design-button{
+    width: 40%;
+    height: 100%;
+    background-color: rgb(241, 233, 233);
+    border:none;
+    outline:none;
+    color:rgb(255, 255, 255);
+    font-size:larger;
+    background-color:#ff0026;
+    text-shadow:0 1px rgba(0,0,0,0.4);
+    box-shadow:0 3px 2px 0 #ff0026;
+    font-weight:700;
+}
+/* on hover add task button */
+#design-button:hover{
+    background-color:#ff566f;
+    cursor:pointer
+    }
+    /* add task button on hover */
+#design-button:active{
+    padding-top:2px;
+    box-shadow:none
+}
+
+/* option color change and align */
+#design-option option{
+    background-color: rgb(202, 188, 188);
+    color: red;
+    font-size: large;
+    text-align: center;
+}
+/* this is for task display */
+.show-task{
+    margin-top: 2%;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* flex container to show available task */
+#container{
+    margin-left: 5px;
+    margin-top: 10px;
+    height: auto;
+    max-height: 200px;
+    width: 170px;
+    background-color: rgb(77, 47, 214);
+    border: 2px solid black;
+    justify-content: flex-start;
+    border-radius: 5%;
+    box-shadow: 0px 14px 13px 8px #777273;
+    transition: 1s ease-in-out;
+}
+/* on hover  it will scale the container */
+#container:hover{
+    transform: scale(1.5);
+}
+/* category will be shown in small box */
+#category{
+    display: inline-flex;
+    width: 90%;
+    margin: 5px 5px;
+    padding: 2px;
+    height: 20px;
+    justify-content: center;
+    background-color: yellow;
+    font-weight: bold;
+    box-shadow:0px 4px 9px 2px #ffffff;
+}
+/* this is for descritiob of the task */
+#description{
+    padding-left: 3px;
+    text-align:justify;
+    margin-left: 3px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: white;
+    height: auto;
+    width: inherit;
+    overflow-wrap: break-word;
+}
+/* this is delete task button */
+.delete-button{
+    display: inline-flex;
+    width: 100px;
+    justify-items: center;
+    padding: 5px;
+}
+/* to show date at the center */
+#date{
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-weight: 900;
+}
+/* animation functino to change background */
+@keyframes changeBack {
+    0%{
+        background: linear-gradient(to right,rgb(247, 247, 248), rgb(202, 206, 216),rgb(135, 135, 250));
+    }
+    25%{
+        background: linear-gradient(to right, rgb(212, 213, 230), rgb(203, 203, 238), rgb(117, 117, 241));
+    }
+    50%{
+        background: linear-gradient(to right, rgb(196, 200, 245), rgb(176, 176, 245), rgb(111, 111, 241));
+    }
+    100%{
+        background: linear-gradient(to right, rgb(148, 154, 245), rgb(189, 189, 243));
+    }
+    
+}
+/* body animation it will chnage */
+body{
+    animation: changeBack 15s ease-in-out infinite alternate 0.5s;
+}
